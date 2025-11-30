@@ -133,7 +133,7 @@
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label class="form-label">Appointment Date *</label>
-                                    <input type="date" class="form-control" id="appointmentDate" name="AppointmentDate" 
+                                    <input type="date" class="form-control" id="appointmentDate"
                                            min="@DateTime.Today.ToString("yyyy-MM-dd")" required />
                                 </div>
                                 <div class="col-md-6">
@@ -163,7 +163,7 @@
                             <div class="mb-3">
                                 <label asp-for="Reason" class="form-label">Reason for Visit *</label>
                                 <textarea asp-for="Reason" class="form-control" rows="3" 
-                                          placeholder="Please describe your symptoms or reason for the appointment" required></textarea>
+                                          placeholder="e.g., Regular checkup, Fever, Consultation" required></textarea>
                                 <span asp-validation-for="Reason" class="text-danger small"></span>
                                 <div class="form-text">This information helps the doctor prepare for your visit.</div>
                             </div>
@@ -171,7 +171,7 @@
                             <div class="mb-3">
                                 <label asp-for="Notes" class="form-label">Additional Notes</label>
                                 <textarea asp-for="Notes" class="form-control" rows="2" 
-                                          placeholder="Any additional information (allergies, current medications, etc.)"></textarea>
+                                          placeholder="Allergies, current medications, etc."></textarea>
                                 <span asp-validation-for="Notes" class="text-danger small"></span>
                             </div>
                         </div>
@@ -258,7 +258,6 @@
                 
                 if (date && time) {
                     combinedDateTime.value = date + 'T' + time;
-                    appointmentDate.removeAttribute('name'); // Remove duplicate
                 } else {
                     e.preventDefault();
                     alert('Please select both date and time for the appointment.');

@@ -1,142 +1,49 @@
-# 🏥 Healthcare Management System
+# 🏥 MediCore HMS
 
-A modern, full-featured healthcare management system built with ASP.NET Core MVC. This application provides a comprehensive solution for managing patients, doctors, appointments, medical records, and prescriptions.
+MediCore HMS is a modern healthcare management system built with ASP.NET Core MVC. It streamlines patient, doctor, appointment, medical record, and prescription management, helping healthcare providers improve efficiency, organize clinical workflows, and deliver better patient care.
 
-![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat-square&logo=dotnet)
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-MVC-512BD4?style=flat-square)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+## Overview
 
-## Features
+This project is a sample hospital management system that provides:
 
-### Multi-Role Authentication
-- **Admin** - Full system access and management
-- **Doctor** - Patient management, appointments, prescriptions
-- **Patient** - Book appointments, view records and prescriptions
+- Secure login and registration for different user roles
+- Admin tools to manage patients and doctors
+- Doctor dashboards for viewing appointments and creating medical records
+- Patient dashboards for viewing appointments and prescriptions
+- Appointment scheduling and tracking
+- Medical record and prescription management
 
-### Core Modules
+## Key Features
 
-| Module | Description |
-|--------|-------------|
-| **Patient Management** | Register patients, manage profiles, track medical history |
-| **Doctor Management** | Add doctors, specializations, consultation fees |
-| **Appointment System** | Book, reschedule, cancel appointments with calendar view |
-| **Medical Records** | Create and manage patient medical records |
-| **Prescriptions** | Digital prescriptions with print support |
+### Admin
+- Manage doctors and patients
+- View all appointments
+- Access overall system dashboards and summaries
 
-###  Modern UI/UX
-- Clean, minimal, and professional design
-- Responsive dashboard for all user roles
-- Real-time statistics and data visualization
-- Mobile-friendly interface
+### Doctor
+- View assigned appointments
+- Create and edit medical records
+- Create prescriptions for patients
+- View patient history related to their own cases
 
-## Tech Stack
+### Patient
+- Register and sign in
+- View personal appointments
+- View medical records
+- View prescriptions issued by doctors
 
-- **Backend:** ASP.NET Core 8.0 MVC
-- **Database:** Entity Framework Core with SQL Server
-- **Frontend:** Bootstrap 5, Font Awesome, Inter Font
-- **Authentication:** Session-based authentication
+## Technology Stack
 
-## Getting Started
+- ASP.NET Core MVC (.NET 8)
+- Entity Framework Core
+- SQLite database
+- ASP.NET Core session-based authentication
+- Bootstrap for UI layout
 
-### Prerequisites
+## Project Structure
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- [SQL Server](https://www.microsoft.com/sql-server) (or SQL Server Express/LocalDB)
+- Controllers: request handling for account, appointments, doctors, patients, medical records, and prescriptions
+- Models: domain entities such as User, Patient, Doctor, Appointment, MedicalRecord, and Prescription
+- Data: database context and seed data
+- Views: Razor views for each feature area
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/MazenMahmoud21/HealthCare.git
-   cd HealthCare
-   ```
-
-2. **Restore dependencies**
-   ```bash
-   dotnet restore
-   ```
-
-3. **Update database connection string**
-   
-   Edit `appsettings.json` with your SQL Server connection string:
-   ```json
-   {
-     "ConnectionStrings": {
-       "DefaultConnection": "Server=YOUR_SERVER;Database=HealthcareDB;Trusted_Connection=True;"
-     }
-   }
-   ```
-
-4. **Apply database migrations**
-   ```bash
-   dotnet ef database update
-   ```
-
-5. **Run the application**
-   ```bash
-   dotnet run
-   ```
-
-6. **Open in browser**
-   ```
-   http://localhost:5049
-   ```
-
-## 📸 Screenshots
-
-### Dashboard
-- Admin Dashboard with system statistics
-- Doctor Dashboard with appointment schedule
-- Patient Dashboard with health overview
-
-### Key Features
-- Appointment booking with doctor selection
-- Medical records management
-- Digital prescription system
-
-## 📁 Project Structure
-
-```
-HealthCare/
-├── Controllers/          # MVC Controllers
-│   ├── AccountController.cs
-│   ├── AppointmentController.cs
-│   ├── DoctorController.cs
-│   ├── PatientController.cs
-│   └── ...
-├── Models/               # Data Models & DTOs
-│   ├── Patient.cs
-│   ├── Doctor.cs
-│   ├── Appointment.cs
-│   └── DTOs/
-├── Views/                # Razor Views
-│   ├── Account/
-│   ├── Appointment/
-│   ├── Doctor/
-│   ├── Patient/
-│   └── Shared/
-├── Data/                 # Database Context
-├── wwwroot/              # Static Files (CSS, JS)
-└── Program.cs            # Application Entry Point
-```
-
-## Default Roles
-
-| Role | Access Level |
-|------|--------------|
-| Admin | Full access - manage all users, doctors, patients, appointments |
-| Doctor | View patients, manage appointments, create prescriptions & records |
-| Patient | Book appointments, view own records and prescriptions |
-
-##  Author
-
-**Mazen Mahmoud**
-
-- GitHub: [@MazenMahmoud21](https://github.com/MazenMahmoud21)
-
----
-
-<p align="center">
-  Made with ❤️
-</p>
